@@ -1,0 +1,14 @@
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.centered_main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 600px; 
+    height: 500px;
+    border: groove; 
+    border-radius: 7px;
+}

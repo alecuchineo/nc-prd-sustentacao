@@ -2,5 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("<h1>Teste<\h1>")
+    return render(request, "pipefy/index.html")
 

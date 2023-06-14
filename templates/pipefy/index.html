@@ -1,0 +1,39 @@
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css'%}">
+    <title>Ferramentas - Pipefy</title>
+</head>
+
+<body>
+    <div class="centered" style="height: 100%;">
+        <form>
+            <div class="centered_main">
+                <div>
+                    <input type="Fase de reprocessamento">
+                </div>
+                <div>
+                    <input type="Id do pipe reprocessamento">
+                </div>
+                <div>
+                    <button type="submit" class="btn">Executar</button>
+                </div>
+                
+            </div>
+            <div>
+
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
