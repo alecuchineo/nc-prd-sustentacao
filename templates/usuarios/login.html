@@ -1,3 +1,5 @@
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -7,25 +9,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/style/style.css' %}">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 
 <body>
-    <div class="centered">
-        <form action="">
-            {% csrf_token%}
-            <div class="row">
-                {% for field in form.visible_fields %}
+    <div class="centered" style="height: 100%;">
+        <div calss="centered_main">
+            <form action="{% url 'login'%}" method="POST">
+                {% csrf_token%}
+                <div class="row">
+                    {% for field in form.visible_fields %}
                     <div>
                         <label for="{{field.id_for_label}}">{{field.label}}</label>
                         {{field}}
                     </div>
-                {% endfor %}
-            </div>
-            <div>
-                <button type="submit">Logar</button>
-            </div>
-        </form>
+                    {% endfor %}
+                </div>
+                <div>
+                    <button type="submit">Logar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 

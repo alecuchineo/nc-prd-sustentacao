@@ -1,6 +1,17 @@
-.centered{
+.centered {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100%!;
+    color: black;
+}
+.centered_main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 600px; 
+    height: 500px;
+    border: groove; 
+    border-radius: 7px;
+    border-color: black;
 }

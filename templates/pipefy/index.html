@@ -14,21 +14,23 @@
 
 <body>
     <div class="centered" style="height: 100%;">
-        <form>
+        <form actions="{% url 'submit' %}" method="POST">
+            {% csrf_token%}
             <div class="centered_main">
-                <div>
-                    <input type="Fase de reprocessamento">
+                <div class="row">
+                    {% for field in form.visible_fields %}
+                    <div>
+                        <label for="{{field.id_for_label}}">{{field.label}}</label>
+                        {{field}}
+                    </div>
+                    {% endfor %}
                 </div>
-                <div>
-                    <input type="Id do pipe reprocessamento">
-                </div>
-                <div>
-                    <button type="submit" class="btn">Executar</button>
-                </div>
-                
-            </div>
-            <div>
+                <button type="submit">Processar</button>
+                <button type="button">Parar Processo </button>
+            </div>action
 
+            <div>
+                
             </div>
         </form>
 

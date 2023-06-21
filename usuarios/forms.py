@@ -6,18 +6,18 @@ class LoginForms(forms.Form):
         required=True,
         widget=forms.TextInput(
             attrs={
-                "class": "form-control",
                 "placeholder":"Usuário"
             }
         )
     )
     senha= forms.CharField(
-        label="Senha",
+        label="Informe sua senha",
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                "class": "form-control",
-                "placeholder":"Senha"
+                "placeholder":"Senha",
             }
         )
     )
+
+
