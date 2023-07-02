@@ -3,29 +3,21 @@ import json
 import time
 
 from django.shortcuts import render, redirect
-from pipefy.forms import ReprocessamentoPipefy
-from pipefy.models import PipesConfig
+from pipefy.forms import ReprocessamentoPipefy,PipesManutencao
+from pipefy.models import PipesManutencao, PipesConfig
 from django.contrib import messages
 
 
-token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJ" \
-                   "IUzUxMiJ9.eyJ1c2VyIjp7ImlkIjozMDEz" \
-                   "MTYwNDYsImVtYWlsIjoicmFtb24uYW1vcm" \
-                   "ltQG5lb2NyZWRpdC5jb20uYnIiLCJhcHBs" \
-                   "aWNhdGlvbiI6MzAwMjIwNDI3fX0.7Xe0hz" \
-                   "VK-FpWdk1QI9hxw96PGgDpQU11P92xx_TT" \
-                   "ZAJkMKMntCoH1tFvk0jUP4r97Prs0Kp1lCEWoTNKcCRoZA"
+token = "Bearer "
 
 PARAR_PROCESSO = False
 
 def index(request):
     if not request.user.is_authenticated:
         return redirect('login')
-    pipes = PipesConfig.objects.all()
-    pipes_choise = [(indice, foto.__str__()) for indice, foto in enumerate(pipes)]
     form = ReprocessamentoPipefy()
     
-    return render(request, "pipefy/index.html", {"form": form, "pipes": pipes_choise})
+    return render(request, "pipefy/index.html", {"form": form})
 
 def submit(request):
     if not request.user.is_authenticated:

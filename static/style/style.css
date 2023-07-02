@@ -15,3 +15,8 @@
     border-radius: 7px;
     border-color: black;
 }
+
+.select-picker{
+    margin: 1px black;
+    background-color: blue;
+}
